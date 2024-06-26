@@ -1,4 +1,4 @@
-const TravelPlanCard = ({ plan, onClick }) => {
+const TravelPlanCard = ({ plan, deleteFunc, favoriteFunc }) => {
     return (
         <li id={plan.id} className="travel-list-item">
             <img src={plan.image} alt={plan.destination}/>
@@ -12,8 +12,8 @@ const TravelPlanCard = ({ plan, onClick }) => {
                     { plan.allInclusive && <div className="label">All Inclusive</div> }
                 </div>
                 <div className="buttons-div">
-                    <button onClick={() => onClick(plan.id)} className="delete-btn">Delete</button>
-                    <button className="favorite-btn">♡</button>
+                    <button onClick={() => deleteFunc(plan.id)} className="delete-btn">Delete</button>
+                    <button onClick={() => favoriteFunc(plan.id)} className="favorite-btn">♡</button>
                 </div>
             </div>
         </li>
