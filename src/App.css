@@ -36,3 +36,30 @@
 .text-iron {
   color: #0a035a;
 }
+
+.travel-list-item {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1rem;
+  border: 1px solid black;
+  padding: 1rem 2rem;
+  margin: 0.5rem 0;
+}
+
+.travel-list-item > img {
+  max-width: 50%;
+}
+
+.travel-list-item > .travel-info {
+  text-align: left;
+}
+
+.travel-info  span {
+  font-weight: bold;
+}
+
+.travel-info .description {
+  font-style: italic;
+}
