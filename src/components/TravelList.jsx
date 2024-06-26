@@ -1,5 +1,6 @@
 import travelPlansData from "../assets/travel-plans.json"
 import { useState } from "react";
+import TravelPlanCard from "./TravelPlanCard";
 
 const TravelList = () => {
 
@@ -13,20 +14,7 @@ const TravelList = () => {
     return (
         <ul className="travel-list">
             {list.map(item => (
-                <li key={item.id} className="travel-list-item">
-                    <img src={item.image} alt={item.destination}/>
-                    <div className="travel-info">
-                        <h2>{item.destination} ({item.days} Days)</h2>
-                        <p className="description">{item.description}</p>
-                        <p><span>Price</span>: {item.totalCost} €</p>
-                        <div className="labels-div">
-                            { item.totalCost <= 350 && <div className="label deal">Great Deal</div> }
-                            { item.totalCost >= 1500 && <div className="label">Premium</div> }
-                            {item.allInclusive && <div className="label">All Inclusive</div>}
-                        </div>
-                        <button onClick={() => deleteItem(item.id)} className="delete-btn">Delete</button>
-                    </div>
-                </li>
+                <TravelPlanCard plan={item} key={item.id} onClick={deleteItem}/>
             ))}
         </ul>
     );
